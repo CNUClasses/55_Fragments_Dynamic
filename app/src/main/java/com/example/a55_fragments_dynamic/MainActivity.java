@@ -23,19 +23,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // start the fragment manager
-        FragmentManager manager = getSupportFragmentManager();
+        if (savedInstanceState == null) {
+            //if app ust instantiated add frags, otherwise let android handle
+            // start the fragment manager
+            FragmentManager manager = getSupportFragmentManager();
 
-        // we want a transaction
-        FragmentTransaction transaction = manager.beginTransaction();
-//        transaction.setReorderingAllowed(true);
+            // we want a transaction
+            FragmentTransaction transaction = manager.beginTransaction();
+            transaction.setReorderingAllowed(true);
 
-        transaction.add(R.id.fragment_container1, new Fragment1(), frag1String);
-        transaction.add(R.id.fragment_container2, new Fragment2());
+            transaction.add(R.id.fragment_container1, new Fragment1(), frag1String);
+            transaction.add(R.id.fragment_container2, new Fragment2());
 
-        // either both or neither
-        transaction.commit();
-        manager.executePendingTransactions();
+            // either both or neither
+            transaction.commit();
+            manager.executePendingTransactions();
+        }
     }
 
     @Override
