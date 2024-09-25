@@ -12,19 +12,23 @@
             android:layout_height="wrap_content"
             android:text="Fragment 2"
             android:textAppearance="?android:attr/textAppearanceLarge" />
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="A Radio Button"
-            android:id="@+id/radioButton"
-            android:onClick="doRadio"/>
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Another RadioButton"
-            android:id="@+id/radioButton1"
-            android:onClick="doRadio"
-            />
+
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Either this one"
+        android:id="@+id/radioButton"/>
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Or this one, not both"
+        android:id="@+id/radioButton1"
+        />
+    </RadioGroup>
 
 
 </LinearLayout>

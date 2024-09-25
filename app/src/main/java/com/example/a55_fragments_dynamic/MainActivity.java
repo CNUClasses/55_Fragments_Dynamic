@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
         // we want a transaction
         FragmentTransaction transaction = manager.beginTransaction();
-        transaction.setReorderingAllowed(true);
+//        transaction.setReorderingAllowed(true);
 
         transaction.add(R.id.fragment_container1, new Fragment1(), frag1String);
         transaction.add(R.id.fragment_container2, new Fragment2());
@@ -52,15 +52,6 @@ public class MainActivity extends AppCompatActivity {
             if (myView != null) {
                 TextView myTextView = (TextView) myView.findViewById(R.id.textView1);  //look for views hosted in the root view
                 myTextView.setText("Direct Manipulation");
-
-                //want to set the fragment button handler using an anonymous listener?
-//                Button but=(Button)myView.findViewById(R.id.but1);
-//                but.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        MainActivity.this.doChange2(null);
-//                    }
-//                });
             }
         }
 
@@ -80,5 +71,6 @@ public class MainActivity extends AppCompatActivity {
         transaction.commit();
         manager.executePendingTransactions();
     }
+
 
 }
